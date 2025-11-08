@@ -1,17 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "FocusWhats",
-  "version": "1.0",
-  "description": "Hide unread counts, archive rows, and enable Focus Mode for WhatsApp Web.",
+  "name": "Focused WhatsApp",
+  "version": "1.6",
+  "description": "Hide unread counts, remove archived chats, and toggle Focus Mode for WhatsApp Web.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["https://web.whatsapp.com/*"],
-      "css": ["focus.css"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["focus.css"]
     }
-  ],
-  "permissions": ["storage"],
-  "action": {
-    "default_title": "FocusWhats"
-  }
+  ]
 }

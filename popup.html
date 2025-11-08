@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Focused WhatsApp</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 12px;
+      width: 220px;
+    }
+    h1 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: #333;
+    }
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Focused WhatsApp</h1>
+  <label>
+    Focus Mode
+    <input type="checkbox" id="focusMode">
+  </label>
+  <label>
+    Hide Archived
+    <input type="checkbox" id="hideArchived">
+  </label>
+  <p style="font-size: 12px; color: #666;">Shortcut: Cmd/Ctrl + Option/Alt + Shift + F</p>
+  <script src="popup.js"></script>
+</body>
+</html>

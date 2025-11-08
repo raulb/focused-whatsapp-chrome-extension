@@ -1,4 +1,5 @@
-/* Hide unread counts and notification badges */
+/* 🌿 Focused WhatsApp — distraction-free WhatsApp Web */
+
 [data-testid="icon-unread-count"],
 [data-testid="unread-count"],
 span[aria-label*="unread"],
@@ -7,13 +8,33 @@ div[aria-label*="unread"] {
   display: none !important;
 }
 
-/* Hide the "Archived" row */
-[data-testid="archived-chatlist"],
-div[role="button"][aria-label*="Archived"] {
+/* Hide Archived — only when body has .hide-archived */
+.hide-archived [data-testid="archived-chatlist"],
+.hide-archived div[role="button"][aria-label*="Archived"],
+.hide-archived span:has(> svg[data-icon="archive"]),
+.hide-archived a[href="#archived"],
+.hide-archived [aria-label*="Archived chats"],
+.hide-archived [title*="Archived chats"],
+.hide-archived [aria-label*="Archived"],
+.hide-archived [title*="Archived"],
+.hide-archived [aria-label="Archived chats"],
+.hide-archived section[aria-label="Archived chats"],
+.hide-archived div[role="region"][aria-label="Archived chats"] {
   display: none !important;
 }
 
-/* Focus Mode: show only pinned chats (optional, can toggle later) */
-.focus-mode [role="listitem"]:not(:has(svg[data-icon="pinned"])) {
+/* Focus Mode — restrict filtering to left chat list containers, exclude Archived */
+.focus-mode :is(
+  #pane-side,
+  [data-testid="pane-side"],
+  [data-testid="chat-list"],
+  [data-testid="chatlist"],
+  [role="list"],
+  [role="grid"]
+):not(:is([aria-label*="Archived" i], [data-testid*="archiv" i])) :is([role="listitem"], [role="row"]):not(:has(:is(
+  svg[data-icon='pinned'],
+  [data-icon*='pin'],
+  [aria-label*='Pinned' i]
+))) {
   display: none !important;
 }
