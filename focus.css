@@ -1,0 +1,19 @@
+/* Hide unread counts and notification badges */
+[data-testid="icon-unread-count"],
+[data-testid="unread-count"],
+span[aria-label*="unread"],
+span[aria-label*="sin leer"],
+div[aria-label*="unread"] {
+  display: none !important;
+}
+
+/* Hide the "Archived" row */
+[data-testid="archived-chatlist"],
+div[role="button"][aria-label*="Archived"] {
+  display: none !important;
+}
+
+/* Focus Mode: show only pinned chats (optional, can toggle later) */
+.focus-mode [role="listitem"]:not(:has(svg[data-icon="pinned"])) {
+  display: none !important;
+}
