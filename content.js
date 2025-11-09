@@ -1,4 +1,4 @@
-console.log('Focused WhatsApp v1.6 initialized 🌿', '(id:', (typeof chrome !== 'undefined' && chrome.runtime ? chrome.runtime.id : 'n/a'), ')');
+console.log('Focused WhatsApp v1.6 initialized', '(id:', (typeof chrome !== 'undefined' && chrome.runtime ? chrome.runtime.id : 'n/a'), ')');
 
 const DEBUG = false;
 const dlog = (...args) => { if (DEBUG) console.log('[Focused WhatsApp]', ...args); };
